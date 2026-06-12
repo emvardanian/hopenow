@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hope Now - Bringing hope by sharing the love of Jesus</title>
+<meta name="description" content="Hope Now is a UK Christian charity (Reg. No. 1072038) bringing hope to those in need in Ukraine, Moldova and Sri Lanka through healthcare, orphan care, prison ministry, education, evangelism and care for the elderly." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0b3245;
+    --navy-2:#072734;
+    --blue:#0d80bf;
+    --azure:#29abe3;
+    --gold:#ffd21a;
+    --gold-soft:#fff0ad;
+    --cta:#0a6ea6;
+    --cta-hover:#085980;
+    --cream:#f2f8fc;
+    --surface:#ffffff;
+    --ink:#10303f;
+    --muted:#566e7c;
+    --line:#dce9f1;
+    --shadow-sm:0 1px 2px rgba(19,35,63,.06),0 4px 14px rgba(19,35,63,.05);
+    --shadow-md:0 10px 30px rgba(19,35,63,.10),0 4px 10px rgba(19,35,63,.06);
+    --shadow-lg:0 24px 60px rgba(19,35,63,.16);
+    --r-sm:12px; --r-md:18px; --r-lg:28px; --r-xl:36px;
+    --maxw:1180px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --font-d:"Fraunces",Georgia,serif;
+    --font-b:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:var(--font-b);color:var(--ink);background:var(--cream);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--font-d);font-weight:600;line-height:1.12;letter-spacing:-.01em;color:var(--navy);margin:0}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.8rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--cta);
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--cta);border-radius:2px}
+  .section{padding:96px 0;position:relative}
+  .section-head{max-width:680px;margin-bottom:54px}
+  .section-head h2{font-size:clamp(2rem,4.4vw,3.1rem);margin:16px 0 14px}
+  .section-head p{color:var(--muted);font-size:1.08rem}
+  .lede{font-size:1.15rem;color:var(--muted)}
+
+  /* Buttons */
+  .btn{
+    --bg:var(--cta);--fg:#fff;
+    display:inline-flex;align-items:center;gap:10px;font-family:var(--font-b);font-weight:700;
+    font-size:1rem;padding:15px 28px;border-radius:999px;border:0;cursor:pointer;
+    background:var(--bg);color:var(--fg);box-shadow:var(--shadow-sm);
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s var(--ease);
+    min-height:48px;
+  }
+  .btn:hover{background:var(--cta-hover);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .btn:focus-visible{outline:3px solid var(--azure);outline-offset:3px}
+  .btn .ico{transition:transform .3s var(--ease)}
+  .btn:hover .ico{transform:translateX(4px)}
+  .btn--ghost{--bg:transparent;--fg:var(--navy);box-shadow:inset 0 0 0 2px rgba(19,35,63,.16)}
+  .btn--ghost:hover{--bg:var(--navy);--fg:#fff;box-shadow:inset 0 0 0 2px var(--navy)}
+  .btn--gold{--bg:var(--gold);--fg:#3a2a00}
+  .btn--gold:hover{--bg:#e0a313;background:#e0a313}
+  .btn--light{--bg:#fff;--fg:var(--navy)}
+  .btn--light:hover{--bg:#fff;background:#fff;color:var(--cta-hover)}
+
+  /* ===== Header ===== */
+  .skip{position:absolute;left:-999px;top:0;background:#fff;padding:12px 18px;border-radius:8px;z-index:200}
+  .skip:focus{left:16px;top:16px}
+  header{
+    position:fixed;inset:0 0 auto 0;z-index:100;transition:background .3s var(--ease),box-shadow .3s var(--ease),padding .3s var(--ease);
+    padding:18px 0;
+  }
+  header.scrolled{background:rgba(251,248,241,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:10px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-d);font-weight:700;font-size:1.3rem;color:var(--navy)}
+  .logo-img{height:46px;width:auto;display:block;transition:height .3s var(--ease)}
+  header.scrolled .logo-img{height:38px}
+  footer .logo-img{height:54px}
+  .brand .mark{
+    width:44px;height:44px;border-radius:13px;display:grid;place-items:center;color:#fff;flex:none;
+    background:linear-gradient(140deg,var(--blue),var(--navy));box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+  }
+  .brand .mark svg{width:24px;height:24px}
+  .brand small{display:block;font-family:var(--font-b);font-weight:600;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cta);margin-top:-2px}
+  .menu{display:flex;align-items:center;gap:4px}
+  .menu a{padding:10px 14px;border-radius:999px;font-weight:600;font-size:.95rem;color:var(--navy);transition:background .2s,color .2s;position:relative}
+  .menu a:hover{background:rgba(29,78,216,.08);color:var(--blue)}
+  .nav-cta{display:flex;align-items:center;gap:10px}
+  .burger{display:none;background:none;border:0;cursor:pointer;width:46px;height:46px;border-radius:12px}
+  .burger span{display:block;width:22px;height:2px;background:var(--navy);margin:5px auto;border-radius:2px;transition:.3s var(--ease)}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;padding:172px 0 90px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;animation:float 16s var(--ease) infinite}
+  .blob.b1{width:520px;height:520px;background:radial-gradient(circle,#bcd2ff,transparent 70%);top:-160px;right:-120px}
+  .blob.b2{width:460px;height:460px;background:radial-gradient(circle,var(--gold-soft),transparent 70%);bottom:-180px;left:-120px;animation-delay:-6s}
+  .blob.b3{width:340px;height:340px;background:radial-gradient(circle,#bfe6fb,transparent 70%);top:40%;left:40%;animation-delay:-3s;opacity:.35}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero-copy h1{font-size:clamp(2.6rem,5.6vw,4.4rem);line-height:1.04}
+  .hero-copy h1 .accent{font-style:italic;color:var(--blue);position:relative;white-space:nowrap}
+  .hero-copy h1 .accent::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:10px;background:var(--gold-soft);z-index:-1;border-radius:6px;transform:scaleX(0);transform-origin:left;animation:underline 1s var(--ease) .7s forwards}
+  @keyframes underline{to{transform:scaleX(1)}}
+  .hero-verse{margin:14px 0 0;font-family:var(--font-d);font-style:italic;font-size:1.05rem;color:var(--cta);font-weight:500}
+  .hero-copy p.sub{margin:22px 0 30px;font-size:1.18rem;color:var(--muted);max-width:30em}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-badges{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap}
+  .hero-badge{display:flex;flex-direction:column}
+  .hero-badge b{font-family:var(--font-d);font-size:1.7rem;color:var(--navy);line-height:1}
+  .hero-badge span{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:4px}
+
+  .hero-visual{position:relative}
+  .hero-card{
+    position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg);
+    aspect-ratio:4/5;background:linear-gradient(160deg,#0e4a66,#072734);
+  }
+  .hero-card img{width:100%;height:100%;object-fit:cover;mix-blend-mode:luminosity;opacity:.92}
+  .hero-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(19,35,63,.78))}
+  .hero-card .cap{position:absolute;left:24px;right:24px;bottom:24px;z-index:2;color:#fff}
+  .hero-card .cap .pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);padding:6px 13px;border-radius:999px;font-size:.78rem;font-weight:600;margin-bottom:10px}
+  .hero-card .cap h3{color:#fff;font-size:1.35rem}
+  .float-chip{
+    position:absolute;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:var(--shadow-md);
+    display:flex;align-items:center;gap:12px;z-index:3;animation:bob 5s ease-in-out infinite;
+  }
+  .float-chip .dot{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none}
+  .float-chip b{display:block;font-family:var(--font-d);font-size:1.05rem;color:var(--navy);line-height:1.1}
+  .float-chip span{font-size:.76rem;color:var(--muted);font-weight:600}
+  .float-chip.c1{top:24px;left:-26px}
+  .float-chip.c2{bottom:60px;right:-22px;animation-delay:-2.5s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+  /* ===== Marquee ===== */
+  .marquee{background:var(--navy);color:#fff;padding:18px 0;overflow:hidden;position:relative}
+  .marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 32s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-track span{display:inline-flex;align-items:center;gap:14px;font-family:var(--font-d);font-style:italic;font-size:1.25rem;color:#d9e2f2;white-space:nowrap}
+  .marquee-track span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ===== About ===== */
+  #about{background:var(--surface)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-copy .eyebrow{margin-bottom:14px}
+  .about-copy h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:20px}
+  .about-copy p+p{margin-top:16px}
+  .verse-card{
+    margin-top:26px;padding:24px 26px;border-left:4px solid var(--gold);background:var(--cream);border-radius:0 var(--r-md) var(--r-md) 0;
+  }
+  .verse-card p{font-family:var(--font-d);font-style:italic;font-size:1.15rem;color:var(--navy)}
+  .verse-card cite{display:block;margin-top:8px;font-style:normal;font-weight:700;color:var(--cta);font-size:.9rem}
+  .hope-acro{display:grid;gap:14px}
+  .hope-letter{
+    display:flex;gap:18px;align-items:flex-start;padding:20px 22px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--r-md);box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s
+  }
+  .hope-letter:hover{transform:translateX(6px);box-shadow:var(--shadow-md);border-color:var(--gold)}
+  .hope-letter .L{font-family:var(--font-d);font-weight:700;font-size:2rem;color:var(--blue);line-height:1;width:38px;flex:none}
+  .hope-letter b{font-size:1.05rem;color:var(--navy)}
+  .hope-letter p{font-size:.92rem;color:var(--muted);margin-top:3px}
+
+  /* ===== Stats strip ===== */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:0}
+  .stat{padding:30px 24px;background:linear-gradient(160deg,#0e4a66,#0b3245);border-radius:var(--r-lg);color:#fff;position:relative;overflow:hidden}
+  .stat::before{content:"";position:absolute;width:120px;height:120px;background:radial-gradient(circle,rgba(255,210,26,.4),transparent 70%);top:-40px;right:-30px}
+  .stat b{font-family:var(--font-d);font-size:2.6rem;display:block;line-height:1}
+  .stat span{display:block;margin-top:8px;color:#c4d2ea;font-weight:600;font-size:.92rem}
+
+  /* ===== Programs ===== */
+  #work{background:var(--cream)}
+  .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .prog{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:0;cursor:pointer;
+    box-shadow:var(--shadow-sm);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;
+    display:flex;flex-direction:column;position:relative;overflow:hidden;text-align:left;font-family:inherit;
+  }
+  .prog-media{position:relative;width:100%;aspect-ratio:16/8;overflow:hidden;background:#dceaf3}
+  .prog-media img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+  .prog:hover .prog-media img{transform:scale(1.07)}
+  .prog-media .icon{position:absolute;left:22px;bottom:-26px;margin:0;z-index:3;box-shadow:var(--shadow-md)}
+  .prog-body{padding:40px 26px 26px;display:flex;flex-direction:column;flex:1;position:relative;z-index:1}
+  .prog::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(29,78,216,.05),transparent);opacity:0;transition:opacity .3s}
+  .prog:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--gold)}
+  .prog:hover::before{opacity:1}
+  .prog:focus-visible{outline:3px solid var(--azure);outline-offset:3px}
+  .prog .icon{
+    width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px;flex:none;
+    background:linear-gradient(150deg,#e8efff,#d4e1fb);color:var(--blue);position:relative;z-index:1;transition:transform .3s var(--ease)
+  }
+  .prog:hover .icon{transform:scale(1.08) rotate(-4deg)}
+  .prog .icon svg{width:28px;height:28px}
+  .prog h3{font-size:1.35rem;margin-bottom:8px;position:relative;z-index:1}
+  .prog .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;position:relative;z-index:1}
+  .prog .tags span{font-size:.74rem;font-weight:600;color:var(--blue);background:rgba(29,78,216,.08);padding:4px 10px;border-radius:999px}
+  .prog .teaser{font-size:.95rem;color:var(--muted);position:relative;z-index:1}
+  .prog .more{margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.9rem;color:var(--cta);position:relative;z-index:1}
+  .prog .more svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+  .prog:hover .more svg{transform:translateX(4px)}
+
+  /* Modal */
+  .modal-scrim{
+    position:fixed;inset:0;background:rgba(13,22,40,.55);backdrop-filter:blur(4px);z-index:300;opacity:0;visibility:hidden;
+    transition:opacity .3s var(--ease),visibility .3s;display:grid;place-items:end center;padding:0;
+  }
+  .modal-scrim.open{opacity:1;visibility:visible}
+  .modal{
+    background:var(--surface);width:100%;max-width:760px;max-height:90vh;overflow-y:auto;border-radius:var(--r-xl) var(--r-xl) 0 0;
+    transform:translateY(40px);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg);
+  }
+  .modal-scrim.open .modal{transform:translateY(0)}
+  @media(min-width:740px){.modal-scrim{place-items:center;padding:24px}.modal{border-radius:var(--r-xl);transform:translateY(30px) scale(.97)}.modal-scrim.open .modal{transform:none}}
+  .modal-hero{padding:34px 38px 26px;background:linear-gradient(150deg,#0e4a66,#0b3245);color:#fff;position:sticky;top:0;border-radius:var(--r-xl) var(--r-xl) 0 0;z-index:2}
+  @media(max-width:739px){.modal-hero{border-radius:var(--r-xl) var(--r-xl) 0 0}}
+  .modal-hero .icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.14);color:var(--gold);margin-bottom:14px}
+  .modal-hero .icon svg{width:28px;height:28px}
+  .modal-hero h3{color:#fff;font-size:1.9rem}
+  .modal-hero .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+  .modal-hero .tags span{font-size:.76rem;font-weight:600;background:rgba(255,255,255,.16);color:#eaf0fb;padding:5px 12px;border-radius:999px}
+  .modal-close{position:absolute;top:20px;right:20px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s,transform .2s}
+  .modal-close:hover{background:rgba(255,255,255,.3);transform:rotate(90deg)}
+  .modal-body{padding:32px 38px 40px}
+  .modal-body h4{font-size:1.18rem;color:var(--blue);margin:24px 0 8px}
+  .modal-body h4:first-child{margin-top:0}
+  .modal-body p{color:var(--ink);margin-bottom:6px}
+  .modal-body p.muted{color:var(--muted)}
+
+  /* ===== Reach / countries ===== */
+  #reach{background:var(--surface)}
+  .reach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+  .country{padding:30px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--cream);transition:transform .3s var(--ease),box-shadow .3s}
+  .country:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .country .flag{width:46px;height:34px;border-radius:7px;overflow:hidden;margin-bottom:16px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .country h3{font-size:1.4rem;margin-bottom:8px}
+  .country p{font-size:.95rem;color:var(--muted)}
+
+  /* ===== Team ===== */
+  #team{background:var(--cream)}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .member{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;text-align:center;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s}
+  .member:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .member .av{width:92px;height:92px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;font-family:var(--font-d);font-weight:700;font-size:1.8rem;color:#fff;background:linear-gradient(150deg,var(--blue),var(--navy))}
+  .member img.av{object-fit:cover;box-shadow:0 0 0 4px var(--cream),0 0 0 6px var(--gold-soft)}
+  .member:nth-child(2) .av{background:linear-gradient(150deg,var(--gold),#d98c0a);color:#3a2a00}
+  .member:nth-child(3) .av{background:linear-gradient(150deg,var(--azure),#06485f)}
+
+  /* ===== Field gallery (mosaic) ===== */
+  #gallery{background:var(--surface)}
+  .mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:178px;gap:14px}
+  .m-item{overflow:hidden;border-radius:var(--r-md);box-shadow:var(--shadow-sm);position:relative;display:block}
+  .m-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+  .m-item:hover img{transform:scale(1.07)}
+  .m-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,39,52,.32));opacity:0;transition:opacity .3s}
+  .m-item:hover::after{opacity:1}
+  .m-item.big{grid-column:span 2;grid-row:span 2}
+  .m-item.wide{grid-column:span 2}
+  @media(max-width:760px){
+    .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}
+    .m-item.big{grid-column:span 2;grid-row:span 2}
+    .m-item.wide{grid-column:span 2}
+  }
+  .member h3{font-size:1.25rem}
+  .member span{display:block;margin-top:5px;color:var(--cta);font-weight:700;font-size:.88rem}
+
+  /* ===== Zozulenka feature ===== */
+  #zozulenka{background:linear-gradient(160deg,#0b3245,#0e4a66);color:#fff;overflow:hidden}
+  #zozulenka h2{color:#fff}
+  .zoz-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+  #zozulenka .eyebrow{color:var(--gold)}
+  #zozulenka .eyebrow::before{background:var(--gold)}
+  #zozulenka h2{font-size:clamp(2rem,4vw,2.9rem);margin:14px 0 18px}
+  #zozulenka p{color:#c8d4ea;margin-bottom:14px}
+  .zoz-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .zoz-visual{position:relative;aspect-ratio:1/1;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg);background:rgba(255,255,255,.05)}
+  .zoz-visual img{width:100%;height:100%;object-fit:cover;opacity:.9}
+  .zoz-note{display:inline-flex;align-items:center;gap:8px;background:rgba(255,210,26,.16);color:var(--gold);padding:8px 16px;border-radius:999px;font-weight:600;font-size:.85rem;margin-bottom:6px}
+
+  /* ===== Donate ===== */
+  #donate{background:var(--surface)}
+  .donate-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+  .donate-lead h2{font-size:clamp(2rem,4vw,2.9rem);margin:14px 0 16px}
+  .donate-lead p{color:var(--muted)}
+  .give-card{
+    margin-top:26px;background:linear-gradient(160deg,#0e4a66,#0b3245);color:#fff;border-radius:var(--r-lg);padding:30px;position:relative;overflow:hidden;box-shadow:var(--shadow-md)
+  }
+  .give-card::after{content:"";position:absolute;width:160px;height:160px;background:radial-gradient(circle,rgba(255,210,26,.4),transparent 70%);bottom:-50px;right:-40px}
+  .give-card h3{color:#fff;font-size:1.4rem;margin-bottom:8px;position:relative}
+  .give-card p{color:#c8d4ea;position:relative;margin-bottom:18px}
+  .give-card .btn{position:relative}
+  .ways{display:grid;gap:14px}
+  .way{
+    background:var(--cream);border:1px solid var(--line);border-radius:var(--r-md);padding:22px 24px;
+    transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;
+  }
+  .way:hover{transform:translateX(6px);border-color:var(--gold);box-shadow:var(--shadow-sm)}
+  .way-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .way-head .ic{width:40px;height:40px;border-radius:11px;background:linear-gradient(150deg,#e8efff,#d4e1fb);color:var(--blue);display:grid;place-items:center;flex:none}
+  .way-head .ic svg{width:22px;height:22px}
+  .way-head h4{font-size:1.1rem}
+  .way p{font-size:.93rem;color:var(--muted)}
+  .way address{font-style:normal;font-size:.93rem;color:var(--ink);margin-top:6px;line-height:1.5}
+  .way a.inline{color:var(--cta);font-weight:600;border-bottom:1px solid currentColor}
+
+  /* ===== Contact ===== */
+  #contact{background:var(--cream)}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;align-items:start}
+  .contact-info .block{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .contact-info .block:first-of-type{padding-top:0}
+  .contact-info .ic{width:46px;height:46px;border-radius:13px;background:var(--surface);box-shadow:var(--shadow-sm);color:var(--blue);display:grid;place-items:center;flex:none}
+  .contact-info .ic svg{width:24px;height:24px}
+  .contact-info h4{font-size:1.05rem;margin-bottom:4px}
+  .contact-info address,.contact-info p{font-style:normal;font-size:.95rem;color:var(--muted);line-height:1.55}
+  .contact-info a{color:var(--cta);font-weight:600}
+  .socials{display:flex;gap:12px;margin-top:22px}
+  .socials a{width:46px;height:46px;border-radius:13px;background:var(--surface);box-shadow:var(--shadow-sm);display:grid;place-items:center;color:var(--navy);transition:transform .25s var(--ease),background .25s,color .25s}
+  .socials a:hover{transform:translateY(-4px);background:var(--blue);color:#fff}
+  .socials a svg{width:22px;height:22px}
+  form.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow-sm)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:7px;color:var(--navy)}
+  .field label .req{color:var(--cta)}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font-family:inherit;font-size:.97rem;
+    background:var(--cream);color:var(--ink);transition:border-color .2s,box-shadow .2s;min-height:48px;
+  }
+  .field textarea{min-height:120px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 4px rgba(29,78,216,.12);background:#fff}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+  /* ===== News / Newsletters ===== */
+  #news{background:var(--surface)}
+  .news-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
+  .years{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .years a{
+    display:inline-flex;align-items:center;gap:6px;padding:11px 18px;border-radius:999px;border:1.5px solid var(--line);
+    background:var(--cream);font-weight:700;color:var(--navy);transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s;
+  }
+  .years a:hover{transform:translateY(-3px);background:var(--blue);color:#fff;border-color:var(--blue)}
+  .news-side{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+  .news-side h4{font-size:1.15rem;margin-bottom:6px}
+  .news-side p{color:var(--muted);font-size:.94rem;margin-bottom:16px}
+  .news-side .links{display:grid;gap:10px}
+  .news-side .links a{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:var(--surface);border-radius:12px;font-weight:600;box-shadow:var(--shadow-sm);transition:transform .25s var(--ease)}
+  .news-side .links a:hover{transform:translateX(5px)}
+  .news-side .links a svg{width:18px;height:18px;color:var(--cta)}
+
+  /* ===== Final CTA ===== */
+  .final-cta{padding:0 0 96px}
+  .cta-box{
+    background:linear-gradient(150deg,var(--blue),var(--navy));border-radius:var(--r-xl);padding:64px 48px;text-align:center;color:#fff;
+    position:relative;overflow:hidden;box-shadow:var(--shadow-lg)
+  }
+  .cta-box::before,.cta-box::after{content:"";position:absolute;border-radius:50%;filter:blur(40px)}
+  .cta-box::before{width:300px;height:300px;background:radial-gradient(circle,rgba(255,210,26,.35),transparent 70%);top:-100px;left:-60px}
+  .cta-box::after{width:280px;height:280px;background:radial-gradient(circle,rgba(41,171,227,.45),transparent 70%);bottom:-110px;right:-50px}
+  .cta-box h2{color:#fff;font-size:clamp(2rem,4.4vw,3rem);position:relative;margin-bottom:14px}
+  .cta-box p{color:#d3deef;position:relative;max-width:34em;margin:0 auto 28px;font-size:1.1rem}
+  .cta-box .hero-actions{justify-content:center;position:relative}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy);color:#aebbd4;padding:64px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px;margin-bottom:44px}
+  .foot-brand .brand{color:#fff;margin-bottom:14px}
+  .foot-brand .brand .mark{background:linear-gradient(140deg,var(--gold),#d98c0a);color:#3a2a00}
+  .foot-brand p{font-size:.92rem;max-width:30ch}
+  .foot-verse{font-family:var(--font-d);font-style:italic;color:var(--gold);margin-top:14px;font-size:1.02rem}
+  footer h5{color:#fff;font-family:var(--font-b);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 16px}
+  footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  footer ul a{font-size:.92rem;transition:color .2s,padding-left .2s}
+  footer ul a:hover{color:var(--gold);padding-left:4px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:.86rem}
+  .foot-bottom .reg{display:inline-flex;align-items:center;gap:8px}
+  .foot-bottom .reg svg{width:16px;height:16px;color:var(--gold)}
+
+  /* ===== Reveal animation ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-delay="1"]{transition-delay:.08s}
+  .reveal[data-delay="2"]{transition-delay:.16s}
+  .reveal[data-delay="3"]{transition-delay:.24s}
+  .reveal[data-delay="4"]{transition-delay:.32s}
+  .reveal[data-delay="5"]{transition-delay:.40s}
+
+  /* ===== Responsive ===== */
+  @media(max-width:980px){
+    .hero-grid,.about-grid,.zoz-grid,.donate-grid,.contact-grid,.news-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{max-width:440px;margin-inline:auto;width:100%}
+    .prog-grid,.reach-grid,.team-grid{grid-template-columns:repeat(2,1fr)}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:720px){
+    .menu,.nav-cta .btn{display:none}
+    .burger{display:block}
+    .menu.mobile{display:flex;position:fixed;inset:72px 16px auto 16px;flex-direction:column;align-items:stretch;
+      background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:14px;box-shadow:var(--shadow-lg);z-index:99;gap:4px}
+    .menu.mobile a{padding:13px 16px}
+    .section{padding:70px 0}
+    .prog-grid,.reach-grid,.team-grid,.stats,.foot-grid{grid-template-columns:1fr}
+    .row2{grid-template-columns:1fr}
+    .hero{padding:140px 0 70px}
+    .cta-box{padding:48px 26px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+    .hero-copy h1 .accent::after{transform:scaleX(1)}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Hope Now home">
+      <img class="logo-img" src="assets/hope-now-logo.png" alt="Hope Now" width="1150" height="437" />
+    </a>
+    <nav class="menu" id="menu" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#work">What We Do</a>
+      <a href="#reach">Where We Work</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn" href="#donate">Donate<svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Defending the weak and the fatherless</span>
+      <h1 class="reveal" data-delay="1">Bringing <span class="accent">hope</span> by sharing the love of Jesus</h1>
+      <p class="hero-verse reveal" data-delay="2">&ldquo;A Father to the fatherless, a defender of widows, is God in His holy dwelling.&rdquo; &mdash; Psalm 68:5</p>
+      <p class="sub reveal" data-delay="3">A UK Christian charity ministering to those in spiritual, physical and emotional need across Ukraine, Moldova and Sri Lanka &mdash; young and old, rich and poor, free and imprisoned.</p>
+      <div class="hero-actions reveal" data-delay="4">
+        <a class="btn" href="#donate">Donate now<svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#work">See what we do</a>
+      </div>
+      <div class="hero-badges reveal" data-delay="5">
+        <div class="hero-badge"><b>Since 1985</b><span>Ministering with hope</span></div>
+        <div class="hero-badge"><b>3 nations</b><span>Ukraine · Moldova · Sri Lanka</span></div>
+        <div class="hero-badge"><b>10 ministries</b><span>From healthcare to camps</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal" data-delay="2">
+      <div class="hero-card">
+        <img src="assets/images/home-summer-camp.jpg" alt="Children at a Hope Now summer camp at Kompas Park" loading="eager" />
+        <div class="cap">
+          <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Working in Ukraine since 1992</span>
+          <h3>A week of hope at Kompas Park</h3>
+        </div>
+      </div>
+      <div class="float-chip c1">
+        <span class="dot" style="background:linear-gradient(150deg,#e8efff,#d4e1fb);color:var(--blue)" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></span>
+        <span><b>Orphans &amp; shelters</b><span>Loved &amp; cared for</span></span>
+      </div>
+      <div class="float-chip c2">
+        <span class="dot" style="background:linear-gradient(150deg,var(--gold-soft),#f4d27a);color:#7a5400" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span>
+        <span><b>Mobile Medical Unit</b><span>A lifeline to villages</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Healthcare</span><span>Orphans</span><span>Prisons</span><span>Education</span><span>Evangelism</span><span>Elderly</span><span>Summer Camps</span><span>Supporting Churches</span><span>Zozulenka</span><span>Farms Lanka</span>
+    <span>Healthcare</span><span>Orphans</span><span>Prisons</span><span>Education</span><span>Evangelism</span><span>Elderly</span><span>Summer Camps</span><span>Supporting Churches</span><span>Zozulenka</span><span>Farms Lanka</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="eyebrow">About Us</span>
+      <h2>A ministry of hope since 1985</h2>
+      <p class="lede">Hope Now is a Christian charity that aims to bring hope, by sharing the love of Jesus and making Him known &mdash; ministering to those in spiritual, physical and emotional need.</p>
+      <p>We seek to reach the young and old, rich and poor, healthy and infirm, free and imprisoned. The ministry began in 1985, working primarily in Ukraine, and since 2014 has expanded to Moldova and Sri Lanka. Over the years it has helped numerous people improve their lives.</p>
+      <div class="verse-card">
+        <p>&ldquo;A Father to the fatherless, a defender of widows, is God in His holy dwelling.&rdquo;</p>
+        <cite>Psalm 68:5</cite>
+      </div>
+    </div>
+    <div class="hope-acro reveal" data-delay="1" aria-label="The HOPE acronym">
+      <div class="hope-letter"><span class="L">H</span><div><b>Healthcare</b><p>Mobile medical care, treatment funds and hospital visiting for those who cannot afford it.</p></div></div>
+      <div class="hope-letter"><span class="L">O</span><div><b>Orphans</b><p>Internats, rescue shelters, the House of Babies, foster care and pre-independence homes.</p></div></div>
+      <div class="hope-letter"><span class="L">P</span><div><b>Prisons</b><p>Churches within prisons, support for ex-prisoners and prison evangelism.</p></div></div>
+      <div class="hope-letter"><span class="L">E</span><div><b>Education, Evangelism &amp; Elderly</b><p>Plus Summer Camps, Supporting Churches, Zozulenka and other projects.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><b data-count="1985">1985</b><span>The year our ministry began</span></div>
+      <div class="stat reveal" data-delay="1"><b data-count="1992">1992</b><span>Working in Ukraine since</span></div>
+      <div class="stat reveal" data-delay="2"><b data-count="80">80</b><span>Children at the House of Babies, Cherkassy</span></div>
+      <div class="stat reveal" data-delay="3"><b data-count="150">150</b><span>Lonely people at our Christmas Lunch</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE DO ============ -->
+<section id="work" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>Bringing HOPE to those in need</h2>
+      <p>Our caring ministries provide healthcare for children and adults in need, work in orphanages and the Rescue Shelter, run camps for children and widows, support foster families, and equip churches. Select any ministry to read more.</p>
+    </div>
+    <div class="prog-grid" id="progGrid"><!-- cards injected --></div>
+  </div>
+</section>
+
+<!-- ============ WHERE WE WORK ============ -->
+<section id="reach" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Where We Work</span>
+      <h2>Three nations, one mission</h2>
+      <p>Hope Now has been working in Ukraine since 1992, with its headquarters in Cherkassy. Since 2014 our work has reached further afield.</p>
+    </div>
+    <div class="reach-grid">
+      <div class="country reveal">
+        <span class="flag" aria-hidden="true"><span style="flex:1;background:#0057b7"></span><span style="flex:1;background:#ffd700"></span></span>
+        <h3>Ukraine</h3>
+        <p>The heart of our work since 1992, based in Cherkassy: healthcare, orphan care, prison ministry, education, evangelism, care for the elderly, summer camps at Kompas Park and church support.</p>
+      </div>
+      <div class="country reveal" data-delay="1">
+        <span class="flag" aria-hidden="true"><span style="flex:1;background:#0046ae"></span><span style="flex:1;background:#ffd200"></span><span style="flex:1;background:#cc092f"></span></span>
+        <h3>Moldova</h3>
+        <p>Since 2014 Hope Now has extended its reach into Moldova, sharing the love of Jesus with those in need.</p>
+      </div>
+      <div class="country reveal" data-delay="2">
+        <span class="flag" aria-hidden="true"><span style="flex:1;background:#8d2029"></span><span style="flex:1;background:#eb7400"></span></span>
+        <h3>Sri Lanka</h3>
+        <p>Partnering with Farms Lanka, we support families, enable children to gain an education, and back small farms and other income-generating projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section id="team" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our People</span>
+      <h2>Led by faithful servants</h2>
+      <p>Hope Now is carried forward by a dedicated team in the UK and Ukraine.</p>
+    </div>
+    <div class="team-grid">
+      <div class="member reveal"><img class="av" src="assets/images/team-jon.jpg" alt="Jon Barnes" loading="lazy" /><h3>Jon Barnes</h3><span>Hope Now UK</span></div>
+      <div class="member reveal" data-delay="1"><img class="av" src="assets/images/team-misha.jpg" alt="Misha Vyshemirskiy" loading="lazy" /><h3>Misha Vyshemirskiy</h3><span>Ukraine Director</span></div>
+      <div class="member reveal" data-delay="2"><img class="av" src="assets/images/team-svieta.jpg" alt="Svieta Kravchenko" loading="lazy" /><h3>Svieta Kravchenko</h3><span>Director of Kompas Park</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIELD GALLERY ============ -->
+<section id="gallery" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">In Pictures</span>
+      <h2>Glimpses from the field</h2>
+      <p>Moments of hope from Ukraine and beyond &mdash; the children, families and communities at the heart of everything we do.</p>
+    </div>
+    <div class="mosaic reveal">
+      <a class="m-item big" href="assets/images/home-ukraine-relief.jpg" target="_blank" rel="noopener"><img src="assets/images/home-ukraine-relief.jpg" alt="Ukraine relief work" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/summer-camp1.jpg" target="_blank" rel="noopener"><img src="assets/images/summer-camp1.jpg" alt="Summer camp at Kompas Park" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/orphans2.jpg" target="_blank" rel="noopener"><img src="assets/images/orphans2.jpg" alt="Children at the Rescue Shelter" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/health-free-examination.jpg" target="_blank" rel="noopener"><img src="assets/images/health-free-examination.jpg" alt="Mobile Medical Team examination" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/elderly2.jpg" target="_blank" rel="noopener"><img src="assets/images/elderly2.jpg" alt="Caring for the elderly" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/evangelism3.jpg" target="_blank" rel="noopener"><img src="assets/images/evangelism3.jpg" alt="Sharing the Good News" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/education2.jpg" target="_blank" rel="noopener"><img src="assets/images/education2.jpg" alt="Education and English classes" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/orphans4.jpg" target="_blank" rel="noopener"><img src="assets/images/orphans4.jpg" alt="Pre-independence home" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/health-childrens-hospital.jpg" target="_blank" rel="noopener"><img src="assets/images/health-childrens-hospital.jpg" alt="Children's hospital visit" loading="lazy" /></a>
+      <a class="m-item wide" href="assets/images/home-youngold.jpg" target="_blank" rel="noopener"><img src="assets/images/home-youngold.jpg" alt="Reaching young and old" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/summer-camp4.jpg" target="_blank" rel="noopener"><img src="assets/images/summer-camp4.jpg" alt="Fun at summer camp" loading="lazy" /></a>
+      <a class="m-item" href="assets/images/zozulenka2.jpg" target="_blank" rel="noopener"><img src="assets/images/zozulenka2.jpg" alt="Zozulenka performing" loading="lazy" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ZOZULENKA ============ -->
+<section id="zozulenka" class="section">
+  <div class="wrap zoz-grid">
+    <div class="reveal">
+      <span class="zoz-note" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Bringing HOPE through song</span>
+      <span class="eyebrow">Zozulenka</span>
+      <h2>Traditional Ukrainian music, full of hope</h2>
+      <p>Zozulenka is a group of young people from School No. 20 in Cherkassy. Trained by their teacher Natalya, they perform regularly in Ukraine, and at the invitation of Hope Now made their first tour of the UK in 2011.</p>
+      <p>They perform traditional songs from Ukrainian culture together with some well-known English songs, and have since toured the UK several more times &mdash; keep an eye on the Latest News section for updates.</p>
+      <p><strong style="color:#fff">Host a concert.</strong> If your church would like to host a performance by Zozulenka, please contact the Hope Now Office. A DVD of some of Zozulenka's UK performances is also available from the office.</p>
+      <div class="zoz-actions">
+        <a class="btn btn--gold" href="https://www.youtube.com/results?search_query=Zozulenka" target="_blank" rel="noopener">Watch on YouTube<svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M17 7H8M17 7v9"/></svg></a>
+        <a class="btn btn--ghost" style="--fg:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.3)" href="#contact">Request the DVD</a>
+      </div>
+    </div>
+    <div class="zoz-visual reveal" data-delay="1">
+      <img src="assets/images/zozulenka2.jpg" alt="Zozulenka, a Ukrainian youth music group, performing" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ DONATE ============ -->
+<section id="donate" class="section">
+  <div class="wrap donate-grid">
+    <div class="donate-lead reveal">
+      <span class="eyebrow">Donate</span>
+      <h2>Your gift brings hope</h2>
+      <p>Every gift helps us share the love of Jesus with those in spiritual, physical and emotional need. There are many ways to give, and UK taxpayers can make every gift go further through Gift Aid.</p>
+      <div class="give-card">
+        <h3>Give online</h3>
+        <p>Make a one-off donation quickly and securely through our give.net page.</p>
+        <a class="btn btn--gold" href="https://www.give.net/HopeNow/oneoff" target="_blank" rel="noopener">Donate via give.net<svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="ways">
+      <div class="way reveal">
+        <div class="way-head"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M3 7l9-4 9 4M5 10v8m14-8v8M3 18h18"/></svg></span><h4>Standing Order</h4></div>
+        <p>Give regularly by standing order. Request a form by contacting the office through our contact page.</p>
+      </div>
+      <div class="way reveal" data-delay="1">
+        <div class="way-head"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 14h4"/></svg></span><h4>Cheque</h4></div>
+        <p>Make cheques payable to &ldquo;Hope Now Limited&rdquo; and post to:</p>
+        <address>Hope Now International Head Office<br>Malvern Centre, Malvern Road<br>Southampton, Hampshire, SO16 6PY</address>
+      </div>
+      <div class="way reveal" data-delay="2">
+        <div class="way-head"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4M4 6v12a2 2 0 0 0 2 2h14v-4M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></span><h4>Sponsorship</h4></div>
+        <p>Multiple sponsorship options are available, including student support. Contact the office for details.</p>
+      </div>
+      <div class="way reveal" data-delay="3">
+        <div class="way-head"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></span><h4>Gift Aid</h4></div>
+        <p>UK taxpayers can enhance donations through Gift Aid. A declaration form is available for download and submission to the office.</p>
+      </div>
+      <div class="way reveal" data-delay="4">
+        <div class="way-head"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22V4a2 2 0 0 1 2-2h9l5 5v15M9 22v-6h6v6M9 2v4h4"/></svg></span><h4>Legacy</h4></div>
+        <p>If you are interested in leaving a bequest to Hope Now, please contact the office for information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section id="news" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Latest News</span>
+      <h2>Newsletters &amp; updates</h2>
+      <p>Read our newsletters from over the years, or follow along on social media for the latest from the field.</p>
+    </div>
+    <div class="news-grid">
+      <div class="reveal">
+        <h4 style="margin-bottom:14px;color:var(--navy)">Newsletter archive</h4>
+        <div class="years">
+          <a href="https://hopenow.org.uk/latest-news/newsletters/2015-newsletters/" target="_blank" rel="noopener">2015</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/2016-newsletters/" target="_blank" rel="noopener">2016</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/2017-newsletters/" target="_blank" rel="noopener">2017</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/2018-newsletters/" target="_blank" rel="noopener">2018</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/2019-newsletters/" target="_blank" rel="noopener">2019</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/2020-newsletters/" target="_blank" rel="noopener">2020</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/2021-newsletters/" target="_blank" rel="noopener">2021</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/2022-2/" target="_blank" rel="noopener">2022</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/elementor-2415/" target="_blank" rel="noopener">2023</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/elementor-page-2570/" target="_blank" rel="noopener">2024</a>
+          <a href="https://hopenow.org.uk/latest-news/newsletters/elementor-2710/" target="_blank" rel="noopener">2025</a>
+        </div>
+      </div>
+      <div class="news-side reveal" data-delay="1">
+        <h4>Stay connected</h4>
+        <p>Follow our social media channels and explore downloads.</p>
+        <div class="links">
+          <a href="https://hopenow.org.uk/latest-news/social-media/" target="_blank" rel="noopener">Social Media<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="https://hopenow.org.uk/contact-us/downloads/" target="_blank" rel="noopener">Downloads<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg></a>
+          <a href="https://hopenow.org.uk/contact-us/privacy-policy/" target="_blank" rel="noopener">Privacy Policy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contact Us</span>
+      <h2>We'd love to hear from you</h2>
+      <p>If you prefer to write rather than type, please send your letters to the Hope Now office.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="block">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><h4>Hope Now International Head Office</h4><address>Malvern Centre, Malvern Road<br>Southampton, Hampshire<br>SO16 6PY, United Kingdom</address></div>
+        </div>
+        <div class="block">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+          <div><h4>Call us</h4><p><a href="tel:+442380780720">+44 (0)23 8078 0720</a></p></div>
+        </div>
+        <div class="block">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></span>
+          <div><h4>Follow us</h4><p>Find us on Facebook, Instagram and YouTube.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.youtube.com/results?search_query=Zozulenka" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.77-1.77C19.34 5.3 12 5.3 12 5.3s-7.34 0-8.83.43A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.77 1.77c1.49.43 8.83.43 8.83.43s7.34 0 8.83-.43a2.5 2.5 0 0 0 1.77-1.77C23 15.2 23 12 23 12ZM9.75 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="card reveal" data-delay="1" onsubmit="return false">
+        <div class="row2">
+          <div class="field"><label for="f-name">Name <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
+          <div class="field"><label for="f-email">Email <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
+        </div>
+        <div class="field"><label for="f-subject">Subject</label><input id="f-subject" name="subject" type="text" /></div>
+        <div class="field">
+          <label for="f-topic">How can we help?</label>
+          <select id="f-topic" name="topic">
+            <option value="">Please choose...</option>
+            <option>I'd like to make a donation</option>
+            <option>I'd like to get involved</option>
+            <option>Please send me information about Sponsorship</option>
+            <option>Please send me information about Student Sponsorship</option>
+            <option>I'm interested in leaving a legacy to Hope Now</option>
+            <option>Please send me a Standing Order Form</option>
+            <option>I'd like to buy a copy of the Zozulenka DVD</option>
+            <option>Other (Please specify in "Details")</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-details">Details</label><textarea id="f-details" name="details"></textarea></div>
+        <button class="btn" type="submit" style="width:100%;justify-content:center">Send message<svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>Will you help bring hope?</h2>
+      <p>Your prayers, your gifts and your involvement change lives across Ukraine, Moldova and Sri Lanka. Join us in sharing the love of Jesus with those who need it most.</p>
+      <div class="hero-actions">
+        <a class="btn btn--light" href="#donate">Donate now<svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--gold" href="#contact">Get involved</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="Hope Now home">
+          <img class="logo-img" src="assets/hope-now-logo.png" alt="Hope Now" width="1150" height="437" />
+        </a>
+        <p>A UK Christian charity ministering to those in spiritual, physical and emotional need.</p>
+        <p class="foot-verse">Bringing hope by sharing the love of Jesus</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#work">What We Do</a></li>
+          <li><a href="#reach">Where We Work</a></li>
+          <li><a href="#team">Our People</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get involved</h5>
+        <ul>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#zozulenka">Zozulenka</a></li>
+          <li><a href="#news">Latest News</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="https://hopenow.org.uk/contact-us/downloads/" target="_blank" rel="noopener">Downloads</a></li>
+          <li><a href="https://hopenow.org.uk/latest-news/newsletters/" target="_blank" rel="noopener">Newsletters</a></li>
+          <li><a href="https://hopenow.org.uk/contact-us/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+          <li><a href="https://www.give.net/HopeNow/oneoff" target="_blank" rel="noopener">Give Online</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="reg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Hope Now Limited is a UK Registered Charity No. 1072038</span>
+      <span>Copyright &copy; 2026 Hope Now Limited</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-scrim" id="scrim" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" id="modal">
+    <div class="modal-hero">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <span class="icon" id="modalIcon" aria-hidden="true"></span>
+      <h3 id="modalTitle"></h3>
+      <div class="tags" id="modalTags"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+/* ============ Program data (full content preserved) ============ */
+const ICONS = {
+  health:'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.49 4.04 3 5.5l7 7Z"/><path d="M3.5 10h4l1.5-2 2 4 1.5-2h4"/>',
+  orphan:'<path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9h0M9 13h0M9 17h0"/>',
+  prison:'<path d="M4 4h16v16H4zM8 4v16M12 4v16M16 4v16"/>',
+  education:'<path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/>',
+  evangelism:'<path d="m3 11 19-9-9 19-2-8-8-2Z"/>',
+  elderly:'<circle cx="12" cy="6" r="3"/><path d="M9 22v-6l-2-3 3-4h4l3 4-2 3v6"/>',
+  camps:'<path d="m3 21 9-16 9 16M3 21h18M12 5v16"/>',
+  church:'<path d="M12 2v6M9 5h6M5 22V11l7-4 7 4v11M9 22v-5h6v5"/>',
+  music:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  globe:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/>'
+};
+const PROGRAMS = [
+  {id:'health',icon:'health',title:'Health Care',page:'programmes/health-care.html',teaser:'A lifeline of medical care for those who cannot reach or afford it.',
+   tags:['Mobile Medical Unit','Treatment Fund','Hospital visiting'],
+   body:`<h4>Mobile Medical Unit</h4><p>With medical treatment and medicines being unaffordable, and too far to reach for remote villagers, the Mobile Medical Unit Hope Now supports is a lifeline to many poor people.</p>
+   <h4>Medical Treatment Fund</h4><p>Medical treatment in Ukraine is very expensive and costs have to be paid before treatment begins. Hope Now funds treatment for those who are unable to afford it.</p>
+   <h4>Spectacles and walking sticks</h4><p>Glasses and walking sticks are very much needed and appreciated by the elderly folk.</p>`},
+  {id:'orphans',icon:'orphan',title:'Orphans',page:'programmes/orphans.html',teaser:'Internats, rescue shelters, the House of Babies, foster and pre-independence homes.',
+   tags:['Internats','Rescue Shelter','House of Babies','Foster care'],
+   body:`<h4>Internats (orphanages)</h4><p>Hope Now supports several internats (orphanages) in the Cherkassy region. Each internat Director is responsible for raising support not covered by the authorities. Internats can be for children or older people with learning difficulties.</p>
+   <h4>Rescue Shelter</h4><p>The Cherkassy Rescue Shelter takes children aged from 4 to 18 years. Often from abusing parents or sometimes found on the street, these children need immediate care. Hope Now supports this centre and regularly visits the shelter with treats for the children.</p>
+   <h4>House of Babies, Cherkassy</h4><p>This is home to around 80 children, many of whom have severe disabilities. The 240 staff work round the clock to offer much needed care, and Hope Now has been able to support the centre in many ways.</p>
+   <h4>Pre-independence Homes</h4><p>Pre-Independence homes for boys and girls leaving the internats, or perhaps from very poor families, give the young people an opportunity to learn how to live an independent life. Overseen by our Childcare Officer, they are supported by Hope Now.</p>
+   <h4>Foster Parents</h4><p>Children are placed in Christian families to be loved and cared for.</p>`},
+  {id:'prisons',icon:'prison',title:'Prison Ministry',teaser:'Churches within prisons, support for ex-prisoners and prison evangelism.',
+   tags:['Working in prisons','Ex-prisoner support','Evangelism'],
+   body:`<h4>Prison life</h4><p>Under Communism Christians had been sent to prison for their faith. Now, the Ukrainian Constitution permits freedom of religion. Hope Now was instrumental in establishing chapels and churches within previously restricted Ukrainian prisons. Hundreds of inmates have heard the Gospel message and responded positively through this initiative, which includes aftercare support.</p>
+   <h4>Prison 62</h4><p>Our Ukrainian prison work commenced in 1992 at Prison 62. Currently, inmates have access to a purpose-built church facility for gatherings. In November 2006, Col Alexander Tarasenko and Anatoliy Perepilitsa were appointed to establish two new independent prison ministries while continuing to receive substantial support from Hope Now, expanding the scope of their work.</p>
+   <h4>New Life Village</h4><p>Two former prisoners, Dima and Svieta, are spearheading community development in New Life Village by constructing a church and engaging with residents. Svieta works as a hairdresser, using her profession as a platform to discuss her Christian faith with clients.</p>`},
+  {id:'education',icon:'education',title:'Education',teaser:'Supporting schools, student sponsorship and English classes for young learners.',
+   tags:['Alpha House classes','Student sponsorship','School support'],
+   body:`<h4>Support for Schools</h4><p>Hope Now is keen to support education and works in or supports several of the State schools in Cherkassy as well as a private Christian School. Pens, books and educational equipment all have to be paid for by the schools or parents.</p>
+   <h4>Twinning with UK Schools</h4><p>Crestwood College in Eastleigh, Hampshire, has twinned with School No. 20 in Cherkassy offering pupils the opportunity to have penpals in Ukraine. Crestwood have also supplied funding.</p>
+   <h4>Student Sponsorship</h4><p>For many years Hope Now has had a student sponsorship scheme, enabling Christians from poor families to attend universities and colleges. All are interviewed and means tested and only sponsored as individual sponsorships come available. All students are expected to give at least two weeks of service back to Hope Now.</p>
+   <h4>Alpha House English Classes</h4><p>Our HQ in Cherkassy is also home to the Early Learning Centre where children as young as 4 can begin learning English and art. Volunteer teachers come in once a week to teach and encourage their young pupils.</p>`},
+  {id:'evangelism',icon:'evangelism',title:'Evangelism',teaser:'Taking the Good News to villages, orphanages, hospitals and the visually impaired.',
+   tags:['Village missions','Ray of Hope','Christmas Mission'],
+   body:`<h4>Taking the Good News...</h4><p>Many needy people visit the Hope Now Office in Cherkassy. Our team there show God's love to all who come.</p>
+   <h4>...to the villages</h4><p>Hope Now supports Anastasiia and her team of young missioners. Throughout the year they organise activities and Bible teaching for children living in remote villages.</p>
+   <h4>...to the internat</h4><p>Girls from our pre-independence home visit the internat (orphanage) to share hope and love with the children living there.</p>
+   <h4>...to the hospital</h4><p>Valerii Petrochenko regularly visits the children's hospital taking gifts and sharing the Gospel.</p>
+   <h4>...to the visually impaired</h4><p>Life is difficult in Ukraine for those with disabilities. The &ldquo;Ray of Hope&rdquo; Group encourages the visually impaired, supported by Pastor Peter.</p>`},
+  {id:'elderly',icon:'elderly',title:'Elderly',teaser:'Christmas lunches, food and clothing, "The Nest" and widows\' camps.',
+   tags:['Widows\' Camps','Food Programmes','The Nest'],
+   body:`<p class="muted">Life is hard for the elderly folk in Ukraine. With little or no money, pensions not being paid, and medical care very expensive and often impossible to reach from remote villages, the older generation have to work hard to survive. Growing their own food is essential, so a good harvest is always a blessing and everything is preserved to last through the harsh winter months. Hope Now has several projects to help the elderly.</p>
+   <h4>Christmas Mission</h4><p>Living alone and often in poverty can be so depressing. To help alleviate this, Hope Now organises an &ldquo;English&rdquo; Christmas Lunch for about 150 lonely people. A good meal, gifts, games and a Christmas message brings back the smiles on their faces.</p>
+   <h4>Food and Clothing</h4><p>With the devaluation of the Ukrainian currency, the cost of clothes and imported food stuffs has escalated. Hope Now helps the most needy by giving out food packages and bringing clothes from the UK.</p>
+   <h4>&ldquo;The Nest&rdquo;</h4><p>Ladies with nowhere to turn find respite in the &ldquo;Nest&rdquo;. Lidia has made her home open to abused or lost ladies to stay for a few months until they can get back on their feet again. Bible studies and financial support are offered to all who stay.</p>
+   <h4>Summer Camp for Widows</h4><p>After a hard year and hopefully fruitful harvest, the elderly ladies, and some men, come to Kompas Park for a week of relaxation and Christian teaching led by Larisa and a UK team &ndash; a fun time for all.</p>`},
+  {id:'camps',icon:'camps',title:'Summer Camps',teaser:'Hundreds of children, young people and widows enjoy a week at Kompas Park.',
+   tags:['Kompas Park','Alpha House','Camps for the Disabled'],
+   body:`<h4>Summer Camps at Kompas Park</h4><p>Every year throughout the summer Kompas Park is host to hundreds of children, young people and widows &amp; widowers.</p>
+   <h4>Camp Preparation Week</h4><p>Do you have skills in decorating and DIY? This week is for the cleaning, maintenance and repair of Kompas Park in preparation for the summer visitors.</p>
+   <h4>Alpha House Camp</h4><p>Children come to this camp to learn English, to learn about the Bible and to have fun. The children are age 9&ndash;16 and love meeting English people.</p>
+   <h4>Children's and Youth Camps</h4><p>Children and young people come to these camps to have a wonderful holiday and to learn how much God loves them.</p>
+   <h4>Widows' Camps</h4><p>This camp is for older people &ndash; widows and widowers &ndash; who may never have had a holiday. A time of fun, friendship and learning about God.</p>
+   <h4>Camps for the Disabled</h4><p>Hope Now also supports camps for people with disabilities &ndash; the visually impaired, the deaf and the physically disabled.</p>
+   <h4>Village Camps</h4><p>Anastasiia runs camps in remote villages.</p>
+   <h4>Short Term Service</h4><p>If you are searching for a way to share your faith with others then perhaps a Summer Camp at Kompas Park could be for you! Camps are a combination of games, craft and music activities, along with Bible teaching. UK team members work alongside Ukrainian leaders and interpreters. Contact the office to find out how you could be part of a team or download an application form.</p>`},
+  {id:'churches',icon:'church',title:'Supporting Churches',teaser:'Supporting pastors, buildings and the Cherkassy Centre for Biblical Studies.',
+   tags:['Bible School','Pastors','Equipment & facilities'],
+   body:`<h4>Supporting Churches</h4><p>Hope Now is actively helping a number of churches by supporting pastors, helping smaller churches purchase or adapt buildings to meet in, helping with building materials or heaters, and arranging twinning with UK churches for mutual encouragement. We visit these churches regularly to encourage them and find out their needs.</p>
+   <h4>Cherkassy Centre for Biblical Studies</h4><p>The Cherkassy Centre for Biblical Studies, under the leadership of a British Baptist Minister, was founded in 2004 to train prospective pastors and missionaries. The school is non-denominational and evangelical in character. In May 2006 the first twenty five of its students graduated.</p>
+   <p>In subsequent years more students have been following in their footsteps. The result is that many churches who had untrained pastors now have trained pastors, and churches that previously had no pastor at all now do. This ministry has grown and the Baptist Bishop of Cherkassy visited the school and is very supportive of it.</p>`},
+  {id:'zozulenka',icon:'music',title:'Zozulenka',teaser:'A Ukrainian youth music group from the School of Arts, touring the UK.',
+   tags:['School No. 20','UK tours','DVD available'],
+   body:`<p>Zozulenka is a group of young people from School No. 20 in Cherkassy. Trained by their teacher Natalya, they perform regularly in Ukraine. At the invitation of Hope Now they made their first tour of the UK in 2011.</p>
+   <p>They perform traditional songs from Ukrainian culture together with some well-known English songs. They have since performed several more tours of the UK and will be visiting again &ndash; keep your eye on the Latest News section for updates.</p>
+   <h4>Host a Zozulenka Concert</h4><p>If your church would like to host a performance by Zozulenka, please do contact the Hope Now Office (contact details on the Contact Us page). If you would like to hear them on YouTube, just search for &ldquo;Zozulenka&rdquo;.</p>
+   <h4>DVD</h4><p>A DVD of some of Zozulenka's UK performances is available from the Hope Now Office. Please head over to the Contact Us page to request details.</p>`},
+  {id:'other',icon:'globe',title:'Other Projects',teaser:'Sri Lanka: partnering with Farms Lanka to support families and education.',
+   tags:['Sri Lanka','Farms Lanka'],
+   body:`<h4>Sri Lanka</h4><p>Partnering with Farms Lanka, Hope Now has been able to support families and enable many children to gain an education. Farms Lanka also support small farms and other income generating projects.</p>`}
+];
+
+/* ============ Render program cards ============ */
+const PIMG={health:'pic-health',orphans:'pic-orphans',prisons:'pic-prisons',education:'pic-education',evangelism:'pic-evangelism',elderly:'pic-elderly',camps:'pic-summercamps',churches:'pic-churches',zozulenka:'pic-zozulenka',other:'pic-farmslanka'};
+const grid=document.getElementById('progGrid');
+PROGRAMS.forEach((p,i)=>{
+  const c=document.createElement('button');
+  c.className='prog reveal';c.setAttribute('data-delay',(i%3)+'');c.type='button';
+  c.setAttribute('aria-haspopup','dialog');
+  c.innerHTML=`<span class="prog-media"><img src="assets/images/${PIMG[p.id]}.jpg" alt="" loading="lazy" /><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[p.icon]}</svg></span></span>
+    <span class="prog-body">
+      <h3>${p.title}</h3>
+      <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+      <p class="teaser">${p.teaser}</p>
+      <span class="more">Read more<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </span>`;
+  c.addEventListener('click',()=>openModal(p));
+  grid.appendChild(c);
+});
+
+/* ============ Modal ============ */
+const scrim=document.getElementById('scrim'),modalClose=document.getElementById('modalClose');
+let lastFocus=null;
+function openModal(p){
+  lastFocus=document.activeElement;
+  const mh=document.querySelector('.modal-hero');
+  mh.style.backgroundImage=`linear-gradient(150deg,rgba(14,74,102,.84),rgba(7,39,52,.93)),url(assets/images/${PIMG[p.id]}.jpg)`;
+  mh.style.backgroundSize='cover';mh.style.backgroundPosition='center';
+  document.getElementById('modalIcon').innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[p.icon]}</svg>`;
+  document.getElementById('modalTitle').textContent=p.title;
+  document.getElementById('modalTags').innerHTML=p.tags.map(t=>`<span>${t}</span>`).join('');
+  document.getElementById('modalBody').innerHTML=p.body+(p.page?`<a class="btn" style="margin-top:26px" href="${p.page}">Read the full story<svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>`:'');
+  scrim.classList.add('open');document.body.style.overflow='hidden';
+  modalClose.focus();
+}
+function closeModal(){scrim.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+modalClose.addEventListener('click',closeModal);
+scrim.addEventListener('click',e=>{if(e.target===scrim)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&scrim.classList.contains('open'))closeModal();});
+
+/* ============ Header scroll state ============ */
+const hdr=document.getElementById('hdr');
+const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>30);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+/* ============ Mobile menu ============ */
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{
+  const open=menu.classList.toggle('mobile');burger.classList.toggle('open',open);
+  burger.setAttribute('aria-expanded',open);
+});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  menu.classList.remove('mobile');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');
+}));
+
+/* ============ Reveal on scroll ============ */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+},{threshold:.14,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ============ Animated counters ============ */
+const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+const counters=document.querySelectorAll('[data-count]');
+const cio=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting)return;cio.unobserve(en.target);
+    const el=en.target,target=+el.dataset.count;
+    if(reduce){el.textContent=target;return;}
+    const dur=1400,t0=performance.now();
+    const tick=(now)=>{
+      const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(target*e);
+      if(p<1)requestAnimationFrame(tick);else el.textContent=target;
+    };requestAnimationFrame(tick);
+  });
+},{threshold:.5});
+counters.forEach(c=>cio.observe(c));
+</script>
+</body>
+</html>
